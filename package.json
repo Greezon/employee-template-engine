@@ -1,0 +1,25 @@
+{
+  "name": "employee-template-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greezon/employee-template-engine.git"
+  },
+  "author": "Ian N Astesana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Greezon/employee-template-engine/issues"
+  },
+  "homepage": "https://github.com/Greezon/employee-template-engine#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquire": "^0.4.8",
+    "jest": "^26.4.2"
+  }
+}
