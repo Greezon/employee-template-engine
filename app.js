@@ -10,6 +10,148 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+let employeeInfo = [];
+employeeStart();
+function employeeStart() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "What would you like to do?",
+        name: "options",
+        choices: ["Manager", "Engineer", "Intern", "Exit Application"],
+      },
+    ])
+    .then(function (userChoice) {
+      switch (userChoice.options) {
+        case "Manager":
+          addManager();
+          break;
+        case "Intern":
+          addIntern();
+          break;
+        case "Engineer":
+          addEngineer();
+          break;
+        default:
+          const html = render(employeeInfo);
+          if (!fs.existsSync(OUTPUT_DIR)){
+            fs.mkdirSync(OUTPUT_DIR)
+          }
+          fs.writeFileSync(outputPath, html)
+          console.log(html)
+
+      }
+    });
+}
+
+function addManager() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employeeName",
+        message: "Enter Employee Name.",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "Enter Employee ID.",
+      },
+      {
+        type: "email",
+        name: "employeeEmail",
+        message: "Enter Employee email.",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "Enter Office Number.",
+      },
+    ])
+    .then(function (userEntry) {
+      var newEmployee = new Manager(
+        userEntry.employeeName,
+        userEntry.employeeId,
+        userEntry.employeeEmail,
+        userEntry.officeNumber
+      );
+      employeeInfo.push(newEmployee);
+      employeeStart();
+    });
+}
+
+function addEngineer() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employeeName",
+        message: "Enter Employee Name.",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "Enter Employee ID.",
+      },
+      {
+        type: "email",
+        name: "employeeEmail",
+        message: "Enter Employee email.",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is your Github Information?",
+      },
+    ])
+    .then(function (userEntry) {
+      var newEmployee = new Engineer(
+        userEntry.employeeName,
+        userEntry.employeeId,
+        userEntry.employeeEmail,
+        userEntry.github
+      );
+      employeeInfo.push(newEmployee);
+      startEmployee();
+    });
+}
+
+function addIntern() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employeeName",
+        message: "Enter Employee Name.",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "Enter Employee ID.",
+      },
+      {
+        type: "email",
+        name: "employeeEmail",
+        message: "Enter Employee email.",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "Enter School Information",
+      },
+    ])
+    .then(function (userEntry) {
+      var newEmployee = new Intern(
+        userEntry.employeeName,
+        userEntry.employeeId,
+        userEntry.employeeEmail,
+        userEntry.school
+      );
+      employeeInfo.push(newEmployee);
+      employeeStart();
+    });
+}
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
