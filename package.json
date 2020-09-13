@@ -2,17 +2,17 @@
   "name": "employee-template-engine",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest --verbose test/*",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Greezon/employee-template-engine.git"
   },
   "author": "Ian N Astesana",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Greezon/employee-template-engine/issues"
   },
