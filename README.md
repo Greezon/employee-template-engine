@@ -5,7 +5,13 @@
 
 ## Developer: Ian N Astesana
 
-### Profile: https://github.com/Greezon
+### Profile: https://github.com/Greezon/employee-template-engine
+
+#### Video examples of testing and how to run the app.
+    https://drive.google.com/file/d/1hSmIBQR9yUnZMysxOPjWj5novxmkDo-F/view
+
+    https://drive.google.com/file/d/1AwbFPJIUDMJa999HE6GO-woy5aBETFhS/view
+
 1. License:
    MIT
 
@@ -16,7 +22,6 @@
 
 1. Usage: 
     Step 1. node app.js
-    Follow the prompts in the command window.
 
 1. Testing Methods: 
     Jest
