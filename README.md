@@ -3,6 +3,8 @@
 
 ###### Desccription: I created a command line application. To generate HTML, that displays employee information.
 
+![Alt text](./1.png "employee-template-engine")
+
 ## Developer: Ian N Astesana
 
 ### Profile: https://github.com/Greezon/employee-template-engine
