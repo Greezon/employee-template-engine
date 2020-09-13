@@ -15,7 +15,8 @@
    npm install
 
 1. Usage: 
-    None.
+    Step 1. node app.js
+    Follow the prompts in the command window.
 
 1. Testing Methods: 
     Jest
